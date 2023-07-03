@@ -22,4 +22,8 @@
 
 ![Screenshot 2023-07-03 101248](https://github.com/KILLER-RAMADAN/Full-IDM-Program/assets/90656786/bc39db49-ef97-4296-9492-5b73ab208248)
 
-# Developer: (Ahmed Ramadan)
+# Preview
+
+https://github.com/KILLER-RAMADAN/Full-IDM-Program/assets/90656786/3293fd22-77ad-4b30-8909-87798934c604
+
+# Developer: ([Ahmed Ramadan](https://www.linkedin.com/in/ahmed-ramadan-9b5a32221/)https://www.linkedin.com/in/ahmed-ramadan-9b5a32221/)
