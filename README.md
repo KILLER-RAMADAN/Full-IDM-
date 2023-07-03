@@ -26,4 +26,4 @@
 
 https://github.com/KILLER-RAMADAN/Full-IDM-Program/assets/90656786/3293fd22-77ad-4b30-8909-87798934c604
 
-#✨ [Linkedin Profile](https://www.linkedin.com/in/ahmed-ramadan-9b5a32221/).
+✨ [Linkedin Profile](https://www.linkedin.com/in/ahmed-ramadan-9b5a32221/).
