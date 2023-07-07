@@ -22,6 +22,10 @@
 
 ![Screenshot 2023-07-03 101248](https://github.com/KILLER-RAMADAN/Full-IDM-Program/assets/90656786/bc39db49-ef97-4296-9492-5b73ab208248)
 
+# Platforms that you can download from...
+![240117212-18e4d957-202a-43b9-8abd-dc751c50ade4](https://github.com/KILLER-RAMADAN/Full-IDM-Program/assets/90656786/e2ef7fe3-302b-4fdf-89d1-32666be24322)
+
+
 # Preview
 
 https://github.com/KILLER-RAMADAN/Full-IDM-Program/assets/90656786/3293fd22-77ad-4b30-8909-87798934c604
