@@ -110,10 +110,8 @@ class video_downloader(tk.Tk):
             'format': f"{format}+bestaudio",
             'merge_output_format': 'mkv' ,
             'quiet': True,
-            'no_warnings': True,
             'progress':True,
             "--no-playlist":True,
-            "--geo-verification-proxy URL":True,
             'progress_hooks': [self.progress_hook],
             "external_downloader_args": ['-loglevel', 'panic'],
             'outtmpl': os.path.join(f"{self.entry_path.get()}", '%(title)s.%(ext)s'
@@ -123,15 +121,18 @@ class video_downloader(tk.Tk):
             self.resolutions_fields.configure(state="disabled")
             # messagebox.showinfo("No Res Found","But you get highest res of the video..")
             return {
-            'format': f"bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best",
+            'format':"bv[ext=webm]+ba[ext=m4a]/b[ext=webm]/b",
+            "--list-formats":True,
+            "--proxy URL":True,
             '--rm-cache-dir': True,
+            "--video-multistreams":True,
+            "--prefer-free-formats":"-S ext:mp4:m4a",
              'html5': '1',
+             '-vU':True,
+             '--ignore-config':True,
              'c': 'TVHTML5',
              'cver': '6.20180913',
-             "--no-playlist":True,
-             "--ignore-no-formats-error ":True,
             'progress_hooks': [self.progress_hook],
-            "--geo-verification-proxy URL":True,
             "external_downloader_args": ['-loglevel', 'panic'],
             'outtmpl': os.path.join(f"{self.entry_path.get()}",'%(title)s.%(ext)s'),
             }
@@ -165,7 +166,7 @@ class video_downloader(tk.Tk):
                 ex=ydl.extract_info(self.entry_link.get(), download=False)
                 self.get_info=ex.get("title")
             # Hide progress bar and show download complete message
-             messagebox.showinfo(title='Download Complete', message=f' </> downloaded successfully </> {ex.get("title")}\n in "{self.entry_path.get()}" ')
+             messagebox.showinfo(title='Download Complete', message=f' </> downloaded successfully </>\n"{ex.get("title")}"')
              with youtube_dl.YoutubeDL(ydl_opts) as ydl:
               info_dict = ydl.extract_info(self.entry_link.get(), download=False)
               self.status.configure(text=f" </> Successful Download Video </> {ex.get('title')}")
@@ -195,10 +196,9 @@ class video_downloader(tk.Tk):
             ydl_opts1 = {
              'format': 'bestaudio/best',
              'quiet': True,
-             'no_warnings': True,
+            
              'progress':True,
-             "--no-playlist":True,
-             '--geo-verification-proxy URL':True,
+             
              'progress_hooks': [self.progress_hook],
              "external_downloader_args": ['-loglevel', 'panic'],
              'postprocessors': [{
@@ -210,7 +210,7 @@ class video_downloader(tk.Tk):
                } 
             with yt_dlp.YoutubeDL(ydl_opts1) as ydl:
                download_sound = ydl.download(self.entry_link.get())
-               messagebox.showinfo("Congratulations",f" </> Sound Downloaded Successfully </> {self.get_sound_information}")
+               messagebox.showinfo("Congratulations",f' </> Sound Downloaded Successfully </>\n"{self.get_sound_information}"')
                self.status.configure(text=f" </> Successful Download Sound </> {self.get_sound_information}")
                self.download_Sound_button.configure(state="normal")
                self.style.configure('text.Horizontal.TProgressbar', text=f'No Download')
@@ -290,7 +290,7 @@ class video_downloader(tk.Tk):
               playlist_info = yt_dlp.YoutubeDL().extract_info(f'{self.entry_playlist_link.get()}', download=False)
               playlist_title = playlist_info.get('title', None)        
               ydl.download([f'{self.entry_playlist_link.get()}']) 
-              messagebox.showinfo("Congratulations",f"{playlist_title}\nDownloaded Successfully...")
+              messagebox.showinfo("Congratulations",f'</> Downloaded Successfully </>\n"{playlist_title}"')
               self.status.config(text=f"Playlist Successfully Downloading in your Desktop......")
               self.style.configure('text.Horizontal.TProgressbar', text=f'No Download')
               self.progress_bar['value']=0
@@ -741,7 +741,7 @@ class video_downloader(tk.Tk):
         self.img14=tk.PhotoImage(file="images//minlogo.png")
         self.img15=tk.PhotoImage(file="images//main laibrary.png")
         self.img16=tk.PhotoImage(file="images//min2logo.png")
-        self.img17=tk.PhotoImage(file="images//min3logo.png")
+        # self.img17=tk.PhotoImage(file="images//min3logo.png")
         
         
         
@@ -857,17 +857,7 @@ class video_downloader(tk.Tk):
                                font="arial 10 ",bd=1,relief="flat")
         self.status.place(x=260,y=845,relwidth=1)
         
-        
-        
-        
-         
         self.home_window()
-        
-        
-        
-        
-
-
-
+    
 app=video_downloader()
 app.mainloop()
